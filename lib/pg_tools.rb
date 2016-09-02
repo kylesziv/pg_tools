@@ -46,7 +46,7 @@ module PgTools
 
   #can be added at top of migrations on private schemas; thus, the migration will be skipped if they are attempted on any other schema
   def private_search_path?
-    ActiveRecord::Base.connection.schema_search_path != '"$user",public'
+    ActiveRecord::Base.connection.schema_search_path != '"$user", public'
   end
 
 end
